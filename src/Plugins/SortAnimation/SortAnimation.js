@@ -145,6 +145,7 @@ export default class SortAnimation extends AbstractPlugin {
  * @private
  */
 function animate({from, to}, {duration, easingFunction}) {
+  if (!from || !to) return;
   const domEl = from.domEl;
   const x = from.offsetLeft - to.offsetLeft;
   const y = from.offsetTop - to.offsetTop;
