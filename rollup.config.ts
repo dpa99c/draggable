@@ -8,9 +8,7 @@ import {nodeResolve} from '@rollup/plugin-node-resolve';
 import includePaths from 'rollup-plugin-includepaths';
 import cleanupPlugin from 'rollup-plugin-cleanup';
 
-const packageJSON = readFileSync(
-  new URL('./package.json', import.meta.url).pathname,
-) as unknown;
+const packageJSON = readFileSync(path.resolve('./package.json')) as unknown;
 
 const pkg = JSON.parse(packageJSON as string);
 const extensions = ['.js', '.ts'];
